@@ -1,6 +1,5 @@
 ### [◀](README.md)
 
-
 # Working with functions
 
 You can get a local environment ready using Vagrant for an automatically setting up a machine on Virtualbox.
@@ -76,12 +75,12 @@ And then, log into the created machine:
 vagrant ssh
 ```
 
-> **NOTE**: Vangrant and Virtualbox are required on the machine of course. If you don't have them
+> **NOTE**: Vagrant and Virtualbox are required on the machine of course. If you don't have them
 > check the previous steps to install the packages
 
 Some additional machines have been prepared for the school participants. You can find hot to access to your machine [here](https://raw.githubusercontent.com/Cloud-PG/SOSC2019/master/ansible/hosts)
 
-## Using example functions and WebUI
+## Using example functions and the OpenFaaS UI
 
 Now you can go to <a href="http://localhost:31112/ui/" target="_blank">http://localhost:31112/ui/</a> and, using the password in gateway_password.txt with user `admin`, you should be able to log in. To see your password just type:
 
@@ -91,7 +90,7 @@ cat gateway-password.txt
 
 You will have a page like that as result after the login:
 
-![OpenFaaS Dashboard](img/openfaasstartup.png "OpenFaaS Dashboard")
+![OpenFaaS UI](img/openfaasstartup.png "OpenFaaS UI")
 
 Let's start playing with some example functions. For instance, you can instantiate a function the face-detection of an online image just clicking on `Deploy new function`, searching for `opencv` and installing `face-detect with OpenCV` (button `Deploy`).
 
@@ -129,7 +128,7 @@ The list of all available functions in the store is also available from CLI usin
 faas-cli store list
 ```
 
-## Deployment of a python function (from [OpenFaaS workshop](https://github.com/openfaas/workshop/blob/master/lab3.md#example-function-astronaut-finder))
+## Deployment of a Python function (from [OpenFaaS workshop](https://github.com/openfaas/workshop/blob/master/lab3.md#example-function-astronaut-finder))
 
 Do everyone have a docker account?
 
@@ -275,7 +274,7 @@ Or try it from the dashboard, just clicking to `invoke` and see the result in `r
 
 ![Astronaut dashboard](img/openfaas_astronauts.png)
 
-## HOMEWORK
+## Homework
 
 1. Try to create a function for serving your ML model (you can also make use of: [https://github.com/alexellis/tensorflow-serving-openfaas](https://github.com/alexellis/tensorflow-serving-openfaas) )
 2. Create a function in a different language if you know any

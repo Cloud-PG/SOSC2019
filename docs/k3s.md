@@ -4,7 +4,7 @@
 
 [![K8s](https://d33wubrfki0l68.cloudfront.net/26a177ede4d7b032362289c6fccd448fc4a91174/eb693/images/docs/container_evolution.svg)](https://d33wubrfki0l68.cloudfront.net/26a177ede4d7b032362289c6fccd448fc4a91174/eb693/images/docs/container_evolution.svg)
 
- [From Kuberntes overview](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) - ``` "Containers are a good way to bundle and run your applications. In a production environment, you need to manage the containers that run the applications and ensure that there is no downtime. For example, if a container goes down, another container needs to start. Wouldn’t it be easier if this behavior was handled by a system?" ```
+ [From Kubernetes overview](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) - ``` "Containers are a good way to bundle and run your applications. In a production environment, you need to manage the containers that run the applications and ensure that there is no downtime. For example, if a container goes down, another container needs to start. Wouldn’t it be easier if this behavior was handled by a system?" ```
 
 Let's now put our hands on how Kubernetes can help in managing containers.
 
@@ -23,6 +23,30 @@ And the verify that the cluster is up and running with:
 sudo kubectl get nodes
 ```
 
+### k3sup
+
+To make installing Kubernetes and building clusters even easier, you can use the [k3sup ('ketchup') tool](https://k3sup.dev/) created by OpenFaaS author, Alex Ellis.
+
+k3sup installs Kubernetes with k3s via ssh:
+
+```
+curl -SLSf https://get.k3sup.dev/ | sudo sh
+
+export SERVER="IP_ADDRESS_OF_PRIMARY_NODE"
+k3sup install --ip $SERVER --username root
+
+export SERVER="IP_ADDRESS_OF_PRIMARY_NODE"
+export AGENT_IP="IP_OF_FIRST_AGENT_NODE"
+
+k3sup join --server-ip $SERVER --ip $AGENT_IP --username root
+
+export KUBECONFIG=`pwd`/kubeconfig
+
+kubectl get nodes
+```
+
+You can also find many tutorials about k3sup and k3s [on the website k3sup.dev](https://k3sup.dev)
+
 ## Kubernetes fundamentals
 
 [![schema k8s cluster](https://miro.medium.com/max/841/1*J4BypEYTe_qpOymFFexvGg.png)](https://miro.medium.com/max/841/1*J4BypEYTe_qpOymFFexvGg.png)
@@ -40,10 +64,7 @@ To work with Kubernetes objects–whether to create, modify, or delete them–yo
 In this hands-on we will quickly walk through two main objects: Pods and Services.
 We will use, with some adaptations, [Kubernetes by example](http://kubernetesbyexample.com/) material, where you can find many other examples for different objects and use cases.
 
-
-## Homeworks
-
-
+## Homework
 
 ## Other references
 
