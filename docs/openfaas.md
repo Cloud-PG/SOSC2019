@@ -1,9 +1,10 @@
 ### [◀](README.md)
 
-# Setting up a FaaS platform
+# Set up OpenFaaS
+
+OpenFaaS is a functions platform, it stands for "Functions as a Service", but [can also deploy microservices](https://www.openfaas.com/blog/stateless-microservices/).
 
 [![faas](img/evolution.png)](https://blog.alexellis.io/content/images/2017/08/evolution.png)
-
 
 With function we mean a small and reusable piece of code that:
 
@@ -18,8 +19,7 @@ With function we mean a small and reusable piece of code that:
 There is a reach zoology of FaaS frameworks created to provide and  to manage functions starting from the one developed by IaaS providers (e.g. AWS Lambda, Google Cloud Functions, Azure functions).
 There are also many open-source FaaS solutions (as you can see in the figure above) and for this hands-on we will make use of [OpenFaaS](https://www.openfaas.com/).
 
-## Getting things ready on Kubernetes
-
+## Install OpenFaaS on Kubernetes
 
 ```bash
 sudo kubectl apply -f https://raw.githubusercontent.com/openfaas/faas-netes/master/namespaces.yml
@@ -53,16 +53,12 @@ export OPENFAAS_URL=http://127.0.0.1:31112
 echo -n $PASSWORD | faas-cli login --password-stdin
 ```
 
-
-## Homeworks
-
-
+## Homework
 
 ## Other references
 
 - https://kubernetes.io/docs/tasks/tools/install-minikube/
 - https://github.com/kubernetes-sigs/kind
-
 
 - https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/
 - http://kubernetesbyexample.com/

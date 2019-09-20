@@ -81,7 +81,7 @@ functions:
     handler: ./invoker
     image: mircot/invoker:latest
     environment:
-      gateway_hostname=gateway.openfaas
+      gateway_hostname: "gateway.openfaas"
 ```
 
 Then, just deploy our function:
@@ -104,8 +104,8 @@ $ echo -n "California is great, it's always sunny there." | faas-cli invoke invo
 That was probably positive
 ```
 
-
 ## Triggers
+
 ### Example: using storage events webhook
 
 If you are using Vagrant image you can start from here, otherwise at the end you'll find how to setup a S3 object storage on your own.
@@ -264,7 +264,7 @@ def handle(st):
         return "Error during call to facedetect, expected: %d, got: %d\n" % (200, r.status_code)
 
     # Finally get the output and save it locally
-    dest_file_name = f"processed_{filename}"
+    dest_file_name = f"processed_{file_name}"
     f = open("/tmp/" + dest_file_name, "wb")
     f.write(r.content)
     f.close()
@@ -325,7 +325,7 @@ faas-cli push -f processimage.yml
 faas-cli deploy -f processimage.yml
 ```
 
-Now, once the functions will be ready you should try to upload a `.jpg` image to the `incoming` bucket using the WebUI ( login at `<your host>:9000` with user `admin` and passwd `adminminio` ) and soon you should be able to find a processed file in the `processed` bucket that you can download from the webUI and visualize.
+Now, once the functions will be ready you should try to upload a `.jpg` image to the `incoming` bucket using the WebUI ( login at `<your host>:9000` with user `admin` and password `adminminio` ) and soon you should be able to find a processed file in the `processed` bucket that you can download from the webUI and visualize.
 
 In the following image you can see an example of the hook result:
 
@@ -336,7 +336,7 @@ In the following image you can see an example of the hook result:
 ![Minio file processed](img/minio_3.png)
 
 
-## HOMEWORKS
+## Homework
 
 - Create a workflow with 2 functions in different languages
 - Try to create a workflow triggered by a storage event that use the Tensorflow serving function created on the previous set of homeworks
