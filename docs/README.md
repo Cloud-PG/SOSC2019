@@ -7,9 +7,9 @@ Diego Ciangottini (diego.ciangottini<at\>pg.infn.it)
 
 Mirco Tracolli (mirco.tracolli<at\>pg.infn.it)
 
-## Original matieral
+## Acknowledgements / prior work
 
-Part of the FaaS introductory material is provided by [OpenFaaS workshop](https://github.com/openfaas/workshop)
+Part of the [Functions 101](https://cloud-pg.github.io/SOSC2019/events/) introductory material is provided by [OpenFaaS workshop](https://github.com/openfaas/workshop), copyright [OpenFaaS Author(s)](https://github.com/openfaas/).
 
 ## Hands-on guide
 

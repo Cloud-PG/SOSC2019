@@ -1,12 +1,10 @@
 ### [◀](README.md)
 
-
 # Introduction to cloud platforms
 
 When working with cloud resources, depending on the user needs, different layers of underlyng abstraction can be needed, and depending on how many layers and their composition one can define different categories.
 
 [![PaaS](img/platform-spectrum-small.png)](img/platform-spectrum-small.png)
-
 
 ## Platform as a Service on top of Infrastracture as a Service
 
